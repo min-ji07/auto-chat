@@ -1,6 +1,5 @@
 import Header from './Header'
 import Footer from './Footer'
-import Chat from "../components/Chat";
 import { useNavigate } from "react-router-dom";
 const Main = () => {
     const navigate = useNavigate();
@@ -12,7 +11,7 @@ const Main = () => {
                     navigate(`chat`);
                 }}>
                     <div className='img'>
-                        <img src="../img/img1.jpg" alt="user"/>
+                        <img src={process.env.PUBLIC_URL + "/img/img1.jpg"} alt="user"/>
                     </div>
                     <div className='name'>
                         짱구귀여워
@@ -22,14 +21,14 @@ const Main = () => {
                     navigate(`chat`);
                 }}>
                     <div className='img'>
-                        <img src="../img/img1.jpg" alt="user"/>
+                        <img src={process.env.PUBLIC_URL + "/img/img1.jpg"} alt="user"/>
                     </div>
                     <div className='name'>
                         짱구귀여워
                     </div>
                 </div>
             </div>
-            <Footer/>
+            {/* <Footer/> */}
         </div>
     )
 }

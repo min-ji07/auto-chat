@@ -4,7 +4,7 @@ const Header = () => {
             <p>친구</p>
             <div className="set">
                 <p>검색</p>
-                <p>친구추가</p>
+                {/* <p>친구추가</p> */}
                 <p>설정</p>
             </div>
         </div>

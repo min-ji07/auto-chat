@@ -45,10 +45,10 @@ const Chat = () => {
         <div className="chat-wrap" ref={ref}>
             <div className='friend'>
                 <button className="back-btn" onClick={() => {
-                    navigate('/')
+                    navigate('/auto-chat')
                 }}>뒤로</button>
                 <div className='img'>
-                    <img src="../img/img1.jpg" alt="user"/>
+                    <img src={process.env.PUBLIC_URL + "/img/img1.jpg"} alt="user"/>
                 </div>
                 <div className='name'>
                     짱구귀여워
@@ -74,7 +74,7 @@ const Chat = () => {
                     {/* 상대방 말풍선 */}
                     <li className="d-flex-l p-rela other-message">
                         <div className="friend">
-                            <img src="../img/img1.jpg" alt="user"/>
+                            <img src={process.env.PUBLIC_URL + "/img/img1.jpg"} alt="user"/>
                         </div>
                         <div className="chat_bub">
                             <p className="user-name">짱구귀여워</p>
@@ -96,7 +96,7 @@ const Chat = () => {
                     </li>
                     <li className="d-flex-l p-rela other-message">
                         <div className="friend">
-                            <img src="../img/img1.jpg" alt="user"/>
+                            <img src={process.env.PUBLIC_URL + "/img/img1.jpg"} alt="user"/>
                         </div>
                         <div className="chat_bub">
                             <p className="user-name">짱구귀여워</p>
@@ -118,7 +118,7 @@ const Chat = () => {
                     </li>
                     <li className="d-flex-l p-rela other-message">
                         <div className="friend">
-                            <img src="../img/img1.jpg" alt="user"/>
+                            <img src={process.env.PUBLIC_URL + "/img/img1.jpg"} alt="user"/>
                         </div>
                         <div className="chat_bub">
                             <p className="user-name">짱구귀여워</p>
@@ -149,7 +149,7 @@ const Chat = () => {
                     </li>
                     <li className="d-flex-l p-rela other-message">
                         <div className="friend">
-                            <img src="../img/img1.jpg" alt="user"/>
+                            <img src={process.env.PUBLIC_URL + "/img/img1.jpg"} alt="user"/>
                         </div>
                         <div className="chat_bub">
                             <p className="user-name">짱구귀여워</p>
@@ -162,7 +162,7 @@ const Chat = () => {
                     </li>
                     <li className="d-flex-l p-rela other-message">
                         <div className="friend">
-                            <img src="../img/img1.jpg" alt="user"/>
+                            <img src={process.env.PUBLIC_URL + "/img/img1.jpg"} alt="user"/>
                         </div>
                         <div className="chat_bub">
                             <p className="user-name">짱구귀여워</p>
@@ -175,7 +175,7 @@ const Chat = () => {
                     </li>
                     <li className="d-flex-l p-rela other-message">
                         <div className="friend">
-                            <img src="../img/img1.jpg" alt="user"/>
+                            <img src={process.env.PUBLIC_URL + "/img/img1.jpg"} alt="user"/>
                         </div>
                         <div className="chat_bub">
                             <p className="user-name">짱구귀여워</p>
