@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useEffect, useInsertionEffect, useRef, useState } from "react";
-import { Configuration, OpenAIApi } from 'https://cdn.skypack.dev/openai';
+import { Configuration, OpenAIApi } from 'openai';
 
 const Chat = () => {
     let navigate = useNavigate();
@@ -44,19 +44,22 @@ const Chat = () => {
 
             const configuration = new Configuration({
                 // apiKey: process.env.OPENAI_API_KEY,
-                apiKey: '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',
+                apiKey: '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',
             });
             const openai = new OpenAIApi(configuration);
+            // const { Configuration, OpenAIApi } = require("openai");
 
             openai.createCompletion({
-            model: "text-davinci-002",
-            prompt: message.value,
-            temperature: 0.7,
-            max_tokens: 256,
-            top_p: 1,
-            frequency_penalty: 0,
-            presence_penalty: 0,
+                model: "text-davinci-002",
+                prompt: message.value,
+                temperature: 0.7,
+                max_tokens: 256,
+                top_p: 1,
+                frequency_penalty: 0,
+                presence_penalty: 0,
+                stop: [" Human:", " AI:"],
             }).then((result) => {
+                console.log(result.data)
                 let ai_template = 
                     `<li class="d-flex-l p-rela other-message">
                         <div class="friend">
@@ -73,7 +76,9 @@ const Chat = () => {
                 const chat_bg = document.querySelector('#chat-bg');
                 chat_bg.insertAdjacentHTML('beforeend', ai_template);
                 ref.current.scrollTop = ref.current.scrollHeight;
-            })
+            }).catch((error) => {
+                console.log('openai error', error)
+            });
         }
     }
 
