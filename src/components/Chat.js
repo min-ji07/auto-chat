@@ -4,7 +4,7 @@ import { Configuration, OpenAIApi } from 'openai';
 
 const Chat = () => {
     let navigate = useNavigate();
-
+    const [loading, setLoading] = useState(false);
     const ref = useRef();
 
     const onChange = (e) => {
@@ -22,6 +22,7 @@ const Chat = () => {
         const data = new Date();
         let hours = data.getHours();
         let minutes = data.getMinutes();
+        setLoading(true);
         if(message.value === ""){
             return;
         }else{
@@ -44,7 +45,7 @@ const Chat = () => {
 
             const configuration = new Configuration({
                 // apiKey: process.env.OPENAI_API_KEY,
-                apiKey: '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',
+                apiKey: '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',
             });
             const openai = new OpenAIApi(configuration);
             // const { Configuration, OpenAIApi } = require("openai");
@@ -59,7 +60,8 @@ const Chat = () => {
                 presence_penalty: 0,
                 stop: [" Human:", " AI:"],
             }).then((result) => {
-                console.log(result.data)
+                setLoading(false);
+                console.log(result.data);
                 let ai_template = 
                     `<li class="d-flex-l p-rela other-message">
                         <div class="friend">
@@ -129,9 +131,11 @@ const Chat = () => {
                         </li> */}
                         
                         {/* 입력중 */}
-                        <div className="d-flex-l p-rela text-ing">
-                            <div className="text-ing2"></div>
-                        </div>
+                        {loading && (
+                            <div className="d-flex-l p-rela text-ing">
+                                <div className="text-ing2"></div>
+                            </div>
+                        )}
                     </ul>
 
                 </div>
