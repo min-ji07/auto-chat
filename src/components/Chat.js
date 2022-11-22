@@ -44,12 +44,11 @@ const Chat = () => {
 
 
             const configuration = new Configuration({
-                // apiKey: process.env.OPENAI_API_KEY,
-                apiKey: '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',
+                apiKey: process.env.REACT_APP_OPENAI_API_KEY,
             });
             const openai = new OpenAIApi(configuration);
             // const { Configuration, OpenAIApi } = require("openai");
-
+            
             openai.createCompletion({
                 model: "text-davinci-002",
                 prompt: message.value,
